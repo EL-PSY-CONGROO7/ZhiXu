@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册账号</title>
+    <style>
+        *{
+            margin: 0;  
+            padding: 0; 
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Microsoft YaHei';
+            background-image: linear-gradient(to bottom right ,rgb(156 ,100, 208),rgb(100, 150, 220));
+            display: flex;
+            justify-content: center;  
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        .access{
+            background-color: white;
+            padding: 40px;
+            border-radius: 30px;
+            width: 50%;
+            max-width: 400px;
+        }
+        h2{
+            text-align: center;
+            color: #000000;
+            margin-bottom: 30px;
+        }
+        .input{
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+        label{
+            display: block; 
+            margin-bottom: 10px;
+            color: #555;
+            font-weight: 1000;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 9px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input[type="text"],
+        input[type="too_password"] {
+            width: 100%;
+            padding: 9px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input:focus{
+            outline: none;
+            border-color: rgb(152, 121, 213);
+        }
+        .password{
+            text-align: center;
+            font-size: 20px;
+            margin-bottom:10px;
+        }
+        .too_password{
+            text-align: center;
+            font-size: 20px;
+            margin-bottom:10px;
+        }
+        button{
+            width: 50%;
+            padding: 12px;
+            background:rgb(41, 94, 115);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button:hover{
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+
+        }
+        /* 云朵基础样式 */
+        .cloud {
+        position: absolute;
+        background: white;
+        border-radius: 50px;
+        opacity: 0.85;
+        z-index: -1;
+        box-shadow:
+        /* 底部主体 */
+        0 0 0 white,
+        -20px 10px 0 white,
+        20px 10px 0 white,
+        -10px -15px 0 white,
+        15px -15px 0 white;
+        }
+
+        /* 云朵飘动动画 */
+        @keyframes float {
+        0% {
+            transform: translateX(-120px) translateY(0);
+        }
+        50% {
+            transform: translateX(80px) translateY(-15px);
+        }
+        100% {
+            transform: translateX(220px) translateY(0);
+        }
+        }
+
+        /* 不同云朵的大小、位置和动画时长 */
+        .cloud1 {
+        width: 60px;
+        height: 30px;
+        top: 15%;
+        right: 10%;
+        animation: float 22s linear infinite;
+        }
+        .cloud2 {
+        width: 80px;
+        height: 40px;
+        top: 35%;
+        right: 55%;
+        animation: float 26s linear infinite;
+        animation-delay: 6s;
+        }
+        .cloud3 {
+        width: 50px;
+        height: 25px;
+        top: 65%;
+        right: 25%;
+        animation: float 19s linear infinite;
+        animation-delay: 11s;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="access">
+        <h2>注册</h2>
+        <form  id="registerForm" action="enter.html">
+            <div class="input">
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username" placeholder="请输入用户名">
+            </div>
+            <div class="password">
+                <label for="password">密码</label>
+                <input type="password" id="password" name="password" placeholder="请输入密码">
+            </div>
+            <div class="too_password">
+                <label for="too_password">确认密码</label>
+                <input type="password" id="too_password" name="too_password" placeholder="请确认密码">
+            </div>
+            <button>注册</button>
+        </form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="register.js"></script>
+</html>
